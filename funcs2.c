@@ -32,7 +32,7 @@ void pint(stack_t **stack, unsigned int line_number)
 
 /**
  * nop - literally does nothing
- * @stack - linked list of nodes
+ * @stack: linked list of nodes
  * @line_number: line number
  */
 void nop(stack_t **stack, unsigned int line_number)
