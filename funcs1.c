@@ -6,10 +6,9 @@
  */
 void push(stack_t **stack, unsigned int line_number)
 {
-	char *val = NULL;
 	char **newBUFF;
 	int num;
-	stack_t *new = NULL;
+	stack_t *new;
 
 	new = malloc(sizeof(stack_t));
 	if (!new)
@@ -29,7 +28,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (*stack)
 		(*stack)->prev = new;
 	*stack = new;
-	free(val);
+	free(newBUFF);
 }
 
 /**

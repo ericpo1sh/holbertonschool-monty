@@ -19,27 +19,26 @@ void free_list(stack_t *head)
  * _calloc - will set bytes of allocation to 0
  * @nmemb : the size of our array
  * @size : the size in bytes
- * Return: Null if segfualt, ptr if success
+ * Return: Null if segfualt, p if success
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int i = 0;
-	char *ptr = NULL;
+	void *p;
 
-	if (nmemb == 0 || size == 0)
+	if (nmemb == 0)
 		return (NULL);
 
-	ptr = malloc(nmemb * size);
-	if (!ptr)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
+	if (size == 0)
+		return (NULL);
 
-	for (i = 0; i < (nmemb * size); i++)
-		ptr[i] = 0;
+	p = malloc(nmemb * size);
 
-	return (ptr);
+	if (p == NULL)
+		return (NULL);
+
+	memset(p, 0, nmemb * size);
+
+	return (p);
 }
 /**
  * splitter - splits the string in order to tokenize it
