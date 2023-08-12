@@ -23,7 +23,7 @@ void push(stack_t **stack, unsigned int line_number)
 	num = _atoi(newBUFF[1], line_number);
 
 	new->n = num;
-	new->prev= NULL;
+	new->prev = NULL;
 	new->next = *stack;
 
 	if (*stack)

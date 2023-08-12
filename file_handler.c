@@ -23,7 +23,7 @@ void file_handler(char *file)
 	while (getline(&buff, &size, fd) != -1)
 	{
 		opcode_func = opsfinder();
-		if (!opcode_func)
+		if (opcode_func == NULL)
 		{
 			fprintf(stderr, "L%i: unknown instruction %s", line_n, buff);
 			exit(EXIT_FAILURE);
